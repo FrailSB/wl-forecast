@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Validate Model
+        </h6>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="training-data">Import training data</label>
+            <input
+              type="file"
+              id="training-data"
+              class="form-control-file"
+              required=""
+            />
+            <small class="form-text text-muted" id="fileHelp"
+              >Max 10mb size</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="ann-model">Import ann model</label>
+            <input
+              type="file"
+              id="ann-model"
+              class="form-control-file"
+              required=""
+            />
+            <small class="form-text text-muted" id="fileHelp"
+              >Max 10mb size</small
+            >
+          </div>
+          <button href="#" class="btn btn-primary btn-block" type="submit">
+            <i class="fas fa-server fa-fw"></i> Validate Model
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Output
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="bg-gray-200 p-3 rounded mb-3">
+          No data to display!
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mb-3 mb-lg-0">
+            <button href="#" class="btn btn-info btn-block" type="submit">
+              <i class="fas fa-eye fa-fw"></i> View Graph
+            </button>
+          </div>
+          <div class="col-lg-6">
+            <button href="#" class="btn btn-warning btn-block" type="submit">
+              <i class="fas fa-save fa-fw"></i> Save Result
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          {{ title }}
+        </h6>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="training-data">Import training data</label>
+            <input
+              type="file"
+              id="training-data"
+              class="form-control-file"
+              required
+            />
+            <small class="form-text text-muted" id="fileHelp"
+              >Max 10mb size</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              class="form-control"
+              type="text"
+              id="name"
+              placeholder="Enter model name"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="input-neuron">Input neuron</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="input-neuron"
+                  value="5"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="output-neuron">Hidden neuron</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="output-neuron"
+                  placeholder="0"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="hidden-neuron">Output neuron</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="hidden-neuron"
+                  value="1"
+                  disabled
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="training-algorithm">Training Algorithm</label>
+                <select class="form-control" id="training-algorithm" required>
+                  <option>Adam</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="activation-function">Activation Function</label>
+                <select class="form-control" id="activation-function" required>
+                  <option>Sigmoid</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="epoch-size">Epoch size</label>
+            <input
+              class="form-control"
+              type="number"
+              id="epoch-size"
+              placeholder="0"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="learning-rate">
+                  Learning rate
+                  <span class="font-italic">
+                    (Optional)
+                  </span>
+                </label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="epoch-size"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="epoch-size">
+                  Momentum
+                  <span class="font-italic">
+                    (Optional)
+                  </span>
+                </label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="epoch-size"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+          </div>
+          <button href="#" class="btn btn-primary btn-block" type="submit">
+            <i class="fas fa-project-diagram fa-fw"></i> Create & Train Model
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Output
+        </h6>
+      </div>
+      <div class="card-body">
+        <div class="bg-gray-200 p-3 rounded mb-3">
+          No data to display!
+        </div>
+        <button href="#" class="btn btn-success btn-block" type="submit">
+          <i class="fas fa-cubes fa-fw"></i> Test Model
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
